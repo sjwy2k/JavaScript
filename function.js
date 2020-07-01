@@ -187,7 +187,7 @@ const simplePrint = function() {
 };
 
 //How to make Arrow function
-//1. delete 'function' keywork
+//1. delete 'function' keyword
 //2. delete block'{}'
 //3. add Arrow =>
 
@@ -226,43 +226,64 @@ hello();
 //고려사항 1. command에 예약어 이외의 값이 들어오면 어떻게 처리할 것인가?
 //고려사항 2. 오늘 배운 것을 활용해서 해볼 것
 
-function calculate(command, a, b) {
+//me
+// function calculate(command, a, b) {
+//     switch(command) {
+//         case 'add' :
+//             //add(a, b);
+//             console.log(add(a,b));
+//             break;
+//         case 'substract' :
+//             //substract(a, b);
+//             console.log(substract(a,b));
+//             break;
+//         case 'divide' :
+//             //divide(a, b);
+//             console.log(divide(a,b));
+//             break;
+//         case 'multiply' :
+//             //multiply(a, b);
+//             console.log(multiply(a,b));
+//             break;
+//         case 'remainder' :
+//             //remainder(a, b);
+//             console.log(remainder(a,b));
+//             break;
+//         default :
+//             console.log(`illigal operator was input. please write right operator.`);
+//             break;
+//     }
+
+//     let add = (a, b) => a + b;
+//     let substract = (a, b) => a - b;
+//     let divide = (a, b) => a / b;
+//     let multiply = (a, b) => a * b;
+//     let remainder = (a, b) => a % b;
+// }
+
+// calculate('wrong', 1, 1);
+// calculate('add', 1, 1);
+// calculate('substract', 1, 1);
+// calculate('divide', 4, 2);
+// calculate('multiply', 2, 3);
+// calculate('remainder', 5, 2);
+
+//ellie
+function calculate2(command, a, b) {
     switch(command) {
-        case 'add' :
-            //add(a, b);
-            console.log(add(a,b));
-            break;
-        case 'substract' :
-            //substract(a, b);
-            console.log(substract(a,b));
-            break;
-        case 'divide' :
-            //divide(a, b);
-            console.log(divide(a,b));
-            break;
-        case 'multiply' :
-            //multiply(a, b);
-            console.log(multiply(a,b));
-            break;
-        case 'remainder' :
-            //remainder(a, b);
-            console.log(remainder(a,b));
-            break;
-        default :
-            console.log(`illigal operator was input. please write right operator.`);
-            break;
+        case 'add':
+            return a + b;
+        case 'substract':
+            return a - b;
+        case 'divide':
+            return a / b;
+        case 'multiply':
+            return a * b;
+        case 'remainder':
+            return a % b;
+        default:
+            throw Error('unknown command');
     }
 }
 
-let add = (a, b) => a + b;
-let substract = (a, b) => a - b;
-let divide = (a, b) => a / b;
-let multiply = (a, b) => a * b;
-let remainder = (a, b) => a % b;
-
-calculate('wrong', 1, 1);
-calculate('add', 1, 1);
-calculate('substract', 1, 1);
-calculate('divide', 4, 2);
-calculate('multiply', 2, 3);
-calculate('remainder', 5, 2);
+console.log(calculate2('remainder',8,3));
